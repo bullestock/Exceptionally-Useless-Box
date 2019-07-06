@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1220mm"
+   height="610mm"
+   version="1.1"
+   id="svg5107"
+   sodipodi:docname="linkage4.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata5111">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1600"
+     inkscape:window-height="832"
+     id="namedview5109"
+     showgrid="false"
+     inkscape:document-units="mm"
+     units="mm"
+     inkscape:zoom="4.0601759"
+     inkscape:cx="127.3266"
+     inkscape:cy="29.167147"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g5105" />
+  <desc
+     id="desc4942">/home/torsten/projects/Exceptionally-Useless-Box/Laser Cutting Files/Linkage Laser Cut Layout.DXF - scale = 25.400000, origin = (0.000000, 0.000000), method = file</desc>
+  <defs
+     id="defs4957">
+    <marker
+       id="DistanceX"
+       orient="auto"
+       refX="0"
+       refY="0"
+       style="overflow:visible">
+      <path
+         d="M 3,-3 -3,3 M 0,-5 V 5"
+         style="stroke:#000000;stroke-width:0.5"
+         id="path4944"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <pattern
+       height="8"
+       id="Hatch"
+       patternUnits="userSpaceOnUse"
+       width="8"
+       x="0"
+       y="0">
+      <path
+         d="M8 4 l-4,4"
+         linecap="square"
+         stroke="#000000"
+         stroke-width="0.25"
+         id="path4947" />
+      <path
+         d="M6 2 l-4,4"
+         linecap="square"
+         stroke="#000000"
+         stroke-width="0.25"
+         id="path4949" />
+      <path
+         d="M4 0 l-4,4"
+         linecap="square"
+         stroke="#000000"
+         stroke-width="0.25"
+         id="path4951" />
+    </pattern>
+    <symbol
+       id="*Model_Space" />
+    <symbol
+       id="*Paper_Space" />
+    <symbol
+       id="*Paper_Space0" />
+  </defs>
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="0"
+     id="g5105"
+     transform="translate(0,1182.992)"
+     style="display:inline">
+    <path
+       id="path908"
+       style="display:inline;fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 53.75632,1079.517 67.41128,11.3249 24.0756,3.1937 16.21419,0.2457 c 0,0 11.32509,-0.7561 16.95119,-1.474 6.83742,-0.8725 13.69885,-1.7863 20.39056,-3.4394 5.6063,-1.3849 11.0168,-3.4755 16.45985,-5.4047 3.46903,-1.2296 10.31812,-3.9307 10.31812,-3.9307 0,0 5.76451,-2.7826 8.74368,-3.9431 7.69113,-2.996 16.07512,0.6092 19.01696,6.6454 2.98071,6.1159 0.92679,14.9916 -6.56819,19.3251 -8.52685,4.9301 -26.84285,10.4009 -26.84285,10.4009 0,0 -26.29115,7.4393 -39.79845,9.0898 -13.0892,1.5994 -39.55278,0.737 -39.55278,0.737 l -34.39371,-4.6677 -57.337718,-9.725 c 0,0 -4.221148,-0.4412 -6.290668,-0.1018 -2.208988,0.3623 -6.328193,2.2476 -6.328193,2.2476 0,0 -5.016404,2.1254 -7.674964,2.1744 -6.91063,0.1273 -14.777906,-0.558 -20.1448921,-4.9133 -5.005658,-4.0621 -7.88992701,-11.0128 -8.35276101,-17.4426 -0.394226,-5.4767 1.44672901,-11.4646 4.91338901,-15.7228 4.25836,-5.2306 10.9994401,-8.9587 17.6881981,-9.8268 4.94373,-0.6417 10.14021,1.2576 14.494496,3.685 2.204025,1.2287 3.616188,3.5205 5.444289,5.2599 1.612935,1.5347 2.928723,3.4837 4.873827,4.5669 1.897043,1.0564 6.289547,1.6956 6.289547,1.6956 z m 70.32728,41.402 a 14.4,14.4 0 0 0 0.45103,0.071 m -19.83728,-19.0223 a 5.6692915,5.6692915 0 1 0 -11.338581,0 5.6692915,5.6692915 0 1 0 11.338581,0 z m 141.84783,-12.8931 a 6,6 0 1 0 -12,0 6,6 0 1 0 12,0 z m -126.95126,15.4717 a 5.6692915,5.6692915 0 1 0 -11.33858,0 5.6692915,5.6692915 0 1 0 11.33858,0 z m -89.379456,-15.4717 a 5.6692915,5.6692915 0 1 0 -11.338583,0 5.6692915,5.6692915 0 1 0 11.338583,0 z"
+       inkscape:connector-curvature="0" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="1"
+     style="display:inline" />
+</svg>
