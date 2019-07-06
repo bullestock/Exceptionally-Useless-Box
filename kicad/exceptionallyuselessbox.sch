@@ -104,7 +104,7 @@ U 1 1 5D1953C7
 P 3350 2400
 F 0 "R1" H 3420 2446 50  0000 L CNN
 F 1 "10k" H 3420 2355 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal" V 3280 2400 50  0001 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 3280 2400 50  0001 C CNN
 F 3 "~" H 3350 2400 50  0001 C CNN
 	1    3350 2400
 	1    0    0    -1  
@@ -140,22 +140,13 @@ F 3 "" H 5500 4050 50  0001 C CNN
 	1    5500 4050
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	5600 2650 5600 2900
-Wire Wire Line
-	5600 3600 5700 3600
-Wire Wire Line
-	5700 2900 5600 2900
-Connection ~ 5600 2900
-Wire Wire Line
-	5600 2900 5600 3600
 $Comp
 L Connector_Generic:Conn_01x03 J4
 U 1 1 5D199E95
 P 5900 3000
 F 0 "J4" H 5980 3042 50  0000 L CNN
 F 1 "Conn_01x03" H 5980 2951 50  0000 L CNN
-F 2 "Connector_JST:JST_XH_B03B-XH-A_1x03_P2.50mm_Vertical" H 5900 3000 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 5900 3000 50  0001 C CNN
 F 3 "~" H 5900 3000 50  0001 C CNN
 	1    5900 3000
 	1    0    0    -1  
@@ -166,7 +157,7 @@ U 1 1 5D19A45C
 P 5900 3700
 F 0 "J5" H 5980 3742 50  0000 L CNN
 F 1 "Conn_01x03" H 5980 3651 50  0000 L CNN
-F 2 "Connector_JST:JST_XH_B03B-XH-A_1x03_P2.50mm_Vertical" H 5900 3700 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 5900 3700 50  0001 C CNN
 F 3 "~" H 5900 3700 50  0001 C CNN
 	1    5900 3700
 	1    0    0    -1  
@@ -180,14 +171,10 @@ Wire Wire Line
 Connection ~ 5500 3800
 Wire Wire Line
 	5500 3800 5500 4050
-Text GLabel 5300 3000 0    50   Input ~ 0
+Text GLabel 5300 2900 0    50   Input ~ 0
 TOP
-Text GLabel 5300 3700 0    50   Input ~ 0
+Text GLabel 5300 3600 0    50   Input ~ 0
 BOT
-Wire Wire Line
-	5700 3700 5300 3700
-Wire Wire Line
-	5300 3000 5700 3000
 Text GLabel 3000 4200 0    50   Input ~ 0
 TOP
 Text GLabel 3000 4450 0    50   Input ~ 0
@@ -504,14 +491,27 @@ $EndComp
 Wire Wire Line
 	5900 1900 5900 2000
 $Comp
-L power:+6V #PWR?
+L power:+6V #PWR0104
 U 1 1 5D20DD0B
 P 7850 2050
-F 0 "#PWR?" H 7850 1900 50  0001 C CNN
+F 0 "#PWR0104" H 7850 1900 50  0001 C CNN
 F 1 "+6V" H 7865 2223 50  0000 C CNN
 F 2 "" H 7850 2050 50  0001 C CNN
 F 3 "" H 7850 2050 50  0001 C CNN
 	1    7850 2050
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	5600 3700 5700 3700
+Wire Wire Line
+	5600 2650 5600 3000
+Wire Wire Line
+	5700 3000 5600 3000
+Connection ~ 5600 3000
+Wire Wire Line
+	5600 3000 5600 3700
+Wire Wire Line
+	5300 3600 5700 3600
+Wire Wire Line
+	5700 2900 5300 2900
 $EndSCHEMATC
