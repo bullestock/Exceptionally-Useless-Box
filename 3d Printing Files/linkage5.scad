@@ -9,10 +9,17 @@
 // keep the resulting .stl file manifold.
 fudge = 0.1;
 
+factor = 96/25.4;
+
 module poly_path873(h)
 {
   scale([25.4/96, -25.4/96, 1]) union()
   {
+    difference()
+    {
+      translate([-67.5, 0, h-fudge]) cylinder(h=h, r=24);
+      translate([-77.5, -6.8, h-fudge]) cube([6*factor, 3.5*factor, h+2*fudge]);
+    }
     difference()
     {
        linear_extrude(height=h)
