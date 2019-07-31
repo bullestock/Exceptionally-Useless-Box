@@ -21,7 +21,6 @@ const int echoPin = 7; // "echo" pin on the ultrasonic sensor
 Servo topServo; // the "top" servo is the one whose arms extend out of the top lid
 Servo botServo; // the "bot" or bottom servo is the one whose arms extend out of the front lid
 
-float distance = 0; // variable to store the measured distance from the ultrasonic sensor
 int switchState = 0; // variable to store the state of the switch
 boolean switching = false; // used to control the state of the device and handle the delay of the servo rotation
 
@@ -43,7 +42,7 @@ void setup()
   pinMode(switchPin, INPUT_PULLUP); // don't forget to put a pull-up resistor on this pin
   pinMode(echoPin, INPUT);
   pinMode(trigPin, OUTPUT);
-  Serial.begin(9600);
+  Serial.begin(115200);
   Serial.println("Device is ready");
 
   // if the switch was already on when the device powers on, turn the switch off before entering the main loop
@@ -75,7 +74,7 @@ void loop()
     switching = true;
     resetSwitch(); 
   }
-  distance = getDistance();
+  float distance = getDistance();
   if (distance < distanceMax) // if the reading is close enough to the device, update the motor position
   {
     updateBotArm(distance);
@@ -87,15 +86,16 @@ void loop()
   }
 }
 
-int getDistance()
-{                                                                                                                               
+// Returns distance in centimeters
+float getDistance()
+{ 
   digitalWrite(trigPin, LOW);
   delayMicroseconds(5);
   digitalWrite(trigPin, HIGH);
   delayMicroseconds(10);
   digitalWrite(trigPin,LOW);
-  float duration = pulseIn(echoPin, HIGH);
-  float measuredDistance = duration*.034/2;                                                                       
+  float duration = pulseIn(echoPin, HIGH, 250000);
+  float measuredDistance = duration*.034/2;
   return measuredDistance;
 }
 
@@ -103,11 +103,11 @@ int getDistance()
 void updateBotArm(int handDistance)
 {
   float motorPosition = map(handDistance, 0, distanceMax, botAngleMax, botAngleMin); // convert the sensor distance range to the output angle range, but inverted so that the angle goes up as the distance goes down
-      Serial.print(distance);
-    Serial.print(", ");
-    Serial.println(motorPosition);
+  Serial.print(handDistance);
+  Serial.print(", ");
+  Serial.println(motorPosition);
   {
-    if (distance < 7)
+    if (handDistance < 7)
     {
       commit();
     }
