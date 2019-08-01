@@ -13,6 +13,12 @@ module poly_path908(h)
 {
   scale([25.4/96, -25.4/96, 1]) union()
   {
+    translate([96, 0, -h])
+      difference()
+      {
+        cylinder(h=3*h, r=14.5);
+        translate([-15, -15, -fudge]) cube([15, 30, 3*h+2*fudge]);
+      }
     difference()
     {
        linear_extrude(height=h)
