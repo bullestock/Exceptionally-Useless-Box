@@ -18,7 +18,7 @@ module poly_path873(h)
     difference()
     {
       translate([-67.5, 0, h-fudge]) cylinder(h=h, r=24);
-      translate([-77.5, -6.8, h-fudge]) cube([6*factor, 3.5*factor, h+2*fudge]);
+      translate([-63.8, -12.5, h-fudge]) rotate([0, 0, 45]) cube([3.5*factor, 6*factor, h+2*fudge]);
     }
     difference()
     {
