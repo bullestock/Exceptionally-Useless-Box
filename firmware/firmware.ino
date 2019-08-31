@@ -14,10 +14,9 @@
 // to press the switch and toggle it over.
 
 #include <Servo.h>
+#include <Wire.h>
 
 const int switchPin = 5; // pin that the toggle switch is connected to
-const int trigPin = 6; // "trig" pin on the ultrasonic sensor
-const int echoPin = 7; // "echo" pin on the ultrasonic sensor
 Servo topServo; // the "top" servo is the one whose arms extend out of the top lid
 Servo botServo; // the "bot" or bottom servo is the one whose arms extend out of the front lid
 
@@ -25,8 +24,8 @@ const int botAngleMax = 168;                 // angle in degrees that the bottom
 const int botAngleMin = 20;        //  angle in degrees that the bottom arm goes to when fully retracted
 const int topAngleMax = 157;                // angle in degrees that the top arm will fully extend to        
 const int topAngleMin = 10;               // angle in degrees that the top arm goes to when fully retracted
-const int distanceMax = 30;                // the maximum distance away from the sensor that the bottom servo will respond to
-const int distanceMin = 7;                // distance at which to press the switch
+const int distanceMax = 300;                // the maximum distance away from the sensor that the bottom servo will respond to
+const int distanceMin = 70;                // distance at which to press the switch
 const float thresholdPercent = 0.93; // percentage of the maximum travel of the bottom arm where the arm should fully commit to pressing the switch
 const float threshCommit = thresholdPercent * (botAngleMax - botAngleMin); // the calculated angle when the arm should fully commit to pressing the switch
 
@@ -34,6 +33,7 @@ void console();
 
 void setup() 
 {
+    Wire.begin();
     Serial.begin(115200);
     Serial.println("Exceptionally Useless Box ready");
 
@@ -43,8 +43,6 @@ void setup()
     botServo.write(botAngleMin);       // set initial position of the bottom arm
     delay(3000);
     pinMode(switchPin, INPUT_PULLUP); // don't forget to put a pull-up resistor on this pin
-    pinMode(echoPin, INPUT);
-    pinMode(trigPin, OUTPUT);
     Serial.println("Init done");
 
     if (Serial.available())
@@ -91,30 +89,28 @@ void resetSwitch()
   Serial.println("Switch should be reset now");
 }
 
-// Returns distance in centimeters
-float getDistance()
-{ 
-  digitalWrite(trigPin, LOW);
-  delayMicroseconds(5);
-  digitalWrite(trigPin, HIGH);
-  delayMicroseconds(10);
-  digitalWrite(trigPin, LOW);
-  const int TIMEOUT = 26000;
-  float duration = pulseIn(echoPin, HIGH, TIMEOUT);
-  if (duration == TIMEOUT)
-      duration = 0.0;
-  if (duration == 0.0)
-  {
-      pinMode(echoPin, OUTPUT);
-      digitalWrite(echoPin, LOW);
-      delayMicroseconds(200);
-      digitalWrite(echoPin, HIGH);
-      delayMicroseconds(200);
-      digitalWrite(echoPin, LOW);
-      pinMode(echoPin, INPUT);
-  }
-  float measuredDistance = duration*.034/2;
-  return measuredDistance;
+// Returns distance in mm
+int getDistance()
+{
+    const unsigned char addr = 0;
+    const unsigned char cnt = 2;
+    // step 1: instruct sensor to read echoes
+    Wire.beginTransmission(82); // transmit to device #82 (0x52)
+    // the address specified in the datasheet is 164 (0xa4)
+    // but i2c adressing uses the high 7 bits so it's 82
+    Wire.write(byte(addr));      // sets distance data address (addr)
+    Wire.endTransmission();      // stop transmitting
+    // step 2: wait for readings to happen
+    delay(1);                   // datasheet suggests at least 30uS
+    // step 3: request reading from sensor
+    Wire.requestFrom(82, cnt);    // request cnt bytes from slave device #82 (0x52)
+    // step 5: receive reading from sensor
+    if (cnt <= Wire.available()) { // if two bytes were received
+        const int msb = Wire.read();
+        const int lsb = Wire.read();
+        return (msb << 8) + lsb;
+    }
+    return 0;
 }
 
 const int NOF_BINS = 50;
@@ -127,12 +123,13 @@ const float INF_DIST = 1.0e6;
 int consecutive_timeouts = 0;
 const int MAX_CONSECUTIVE_TIMEOUTS = 2;
 
-float getSmoothedDistance()
+int getSmoothedDistance()
 {
     const auto d = getDistance();
+#if 0
     Serial.print("d "); Serial.println(d);
     bool is_inf = false;
-    if (d < 0.1 || d > 30)
+    if (d < 10 || d > 300)
     {
         ++consecutive_timeouts;
         if (consecutive_timeouts > 10)
@@ -173,6 +170,9 @@ float getSmoothedDistance()
     const auto sd = used_bins >= NOF_BINS ? sum/used_bins : 0.0;
     Serial.print("sd "); Serial.println(sd);
     return sd;
+#else
+    return d;
+#endif
 }
 
 void commit()
@@ -196,7 +196,7 @@ void commit()
     resetSwitch();
     for (int i = 0; i < 10; ++i)
     {
-        if (getSmoothedDistance() > distanceMin + 5)
+        if (getSmoothedDistance() > distanceMin + 50)
             break;
         Serial.println("Wait");
         delay(500);
@@ -233,7 +233,7 @@ void loop()
     float distance = getSmoothedDistance();
     Serial.print("Dist ");
     Serial.println(distance);
-    if (distance > 1 && distance < distanceMax) // if the reading is close enough to the device, update the motor position
+    if (distance > 10 && distance < distanceMax) // if the reading is close enough to the device, update the motor position
     {
         updateBotArm(distance);
         delay(15);                                                                                                                                            
