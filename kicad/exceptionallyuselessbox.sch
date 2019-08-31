@@ -47,10 +47,6 @@ F 3 "~" H 2650 3500 50  0001 C CNN
 	1    2650 3500
 	-1   0    0    -1  
 $EndComp
-Wire Wire Line
-	3600 3500 2850 3500
-Wire Wire Line
-	2850 3600 3600 3600
 $Comp
 L power:+5V #PWR02
 U 1 1 5D19240F
@@ -278,8 +274,6 @@ NoConn ~ 4600 3500
 NoConn ~ 4600 3600
 NoConn ~ 4600 3700
 NoConn ~ 4600 3800
-NoConn ~ 4600 3900
-NoConn ~ 4600 4000
 NoConn ~ 4600 4100
 NoConn ~ 4600 4200
 NoConn ~ 3600 4100
@@ -486,4 +480,20 @@ Wire Wire Line
 Wire Wire Line
 	5500 5800 5500 3800
 Connection ~ 5500 3800
+Text GLabel 3000 3500 2    50   Input ~ 0
+SDA
+Text GLabel 3000 3600 2    50   Input ~ 0
+SCL
+Wire Wire Line
+	3000 3600 2850 3600
+Wire Wire Line
+	2850 3500 3000 3500
+Text GLabel 4800 3900 2    50   Input ~ 0
+SDA
+Wire Wire Line
+	4800 3900 4600 3900
+Text GLabel 4800 4000 2    50   Input ~ 0
+SCL
+Wire Wire Line
+	4800 4000 4600 4000
 $EndSCHEMATC
