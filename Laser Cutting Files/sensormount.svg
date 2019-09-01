@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1220mm"
+   height="610mm"
+   viewBox="0 0 1220 610"
+   version="1.1"
+   id="svg896"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="sensormount.svg">
+  <defs
+     id="defs890" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="20.155444"
+     inkscape:cx="216"
+     inkscape:cy="124.8"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1600"
+     inkscape:window-height="832"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:measure-start="224.999,0.839549"
+     inkscape:measure-end="234.898,52.5512" />
+  <metadata
+     id="metadata893">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,313)">
+    <path
+       inkscape:connector-curvature="0"
+       id="path3061"
+       style="fill:none;stroke:#000000;stroke-width:0.15875;stroke-linecap:round"
+       d="M 111.125,290.65 H 114.3 M 3.175,284.3 v 6.35 M 111.125,246.2 H 3.175 m 0,12.7 v 6.35 M 0,271.6 h 3.175 m 0,0 v 6.35 m -3.175,0 v 6.35 m 0,6.35 V 297 m 111.125,-6.35 v -6.35 m 3.175,6.35 V 297 m 0,-12.7 h -3.175 m 3.175,-6.35 v 6.35 m -3.175,-6.35 h 3.175 m -3.175,0 v -6.35 m 3.175,0 h -3.175 m 3.175,-6.35 v 6.35 m -3.175,-6.35 h 3.175 m -3.175,0 v -6.35 m 3.175,0 h -3.175 m 3.175,-6.35 v 6.35 m -3.175,-6.35 h 3.175 m -3.175,0 V 246.2 M 3.175,290.65 H 0 M 3.175,246.2 v 6.35 m 0,0 H 0 m 0,0 v 6.35 m 0,0 h 3.175 m 0,6.35 H 0 m 0,0 v 6.35 m 3.175,6.35 H 0 m 0,6.35 H 3.175 M 0,297 h 114.3" />
+    <path
+       d="m 50.699999,288.53502 a 0.75,0.75 0 0 1 -0.751243,0.74833 0.75,0.75 0 0 1 -0.748755,-0.75082 0.75,0.75 0 0 1 0.750415,-0.74917 0.75,0.75 0 0 1 0.749585,0.75"
+       sodipodi:open="true"
+       sodipodi:end="0"
+       sodipodi:start="0.0022136011"
+       sodipodi:ry="0.75"
+       sodipodi:rx="0.75"
+       sodipodi:cy="288.53336"
+       sodipodi:cx="49.950001"
+       sodipodi:type="arc"
+       id="path877"
+       style="fill:none;fill-opacity:1;stroke:#060000;stroke-width:0.075;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#060000;stroke-width:0.075;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path879"
+       sodipodi:type="arc"
+       sodipodi:cx="64.349998"
+       sodipodi:cy="288.53336"
+       sodipodi:rx="0.75"
+       sodipodi:ry="0.75"
+       sodipodi:start="0.0022136011"
+       sodipodi:end="0"
+       sodipodi:open="true"
+       d="m 65.099997,288.53502 a 0.75,0.75 0 0 1 -0.751244,0.74833 0.75,0.75 0 0 1 -0.748754,-0.75082 0.75,0.75 0 0 1 0.750415,-0.74917 0.75,0.75 0 0 1 0.749584,0.75" />
+    <rect
+       ry="2.5"
+       y="286.03336"
+       x="52.650002"
+       height="5"
+       width="9"
+       id="rect817"
+       style="fill:none;fill-opacity:1;stroke:#060000;stroke-width:0.1801746;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       id="path819"
+       style="fill:none;stroke:#000000;stroke-width:0.16447368;stroke-linecap:round"
+       d="m 60.15,263.98 a 3,3 0 1 0 -6,0 3,3 0 1 0 6,0 z"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>
